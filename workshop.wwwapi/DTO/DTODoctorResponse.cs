@@ -1,21 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
+using workshop.wwwapi.Models;
 
-namespace workshop.wwwapi.Models
+namespace workshop.wwwapi.DTO
 {
-    [Table("doctor")]
-
-    public class Doctor
+    public class DTODoctorResponse
     {
-        [Column("id")]
-
         public int Id { get; set; }
-        [Column("fullName")]
+        
 
         public string FullName { get; set; }
 
-        [Column("doctor_appointments")]
-        [JsonIgnore]
         public List<Appointment> Appointments { get; set; } = new List<Appointment>();
     }
 }
