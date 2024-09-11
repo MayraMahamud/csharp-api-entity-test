@@ -46,6 +46,22 @@ namespace workshop.wwwapi.Data
 
            );
 
+            modelBuilder.Entity<Prescription>().HasData(
+               new Prescription() { Id = 1, AppointmentId = 1 }
+
+
+          );
+            modelBuilder.Entity<PrescriptionMedicine>().HasData(
+              new PrescriptionMedicine() { Id = 1, PrescriptionId = 1, MedicineId = 1 , Quantity = 1, Notes = "important"}
+
+
+         );
+            modelBuilder.Entity<Medicine>().HasData(
+              new Medicine() { Id = 1, Name = "Alvedon" }
+
+
+         );
+
 
 
         }
@@ -61,5 +77,13 @@ namespace workshop.wwwapi.Data
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
+
+
+        public DbSet<Prescription> Prescriptions { get; set; }
+        public DbSet<PrescriptionMedicine> PrescriptionMedicines { get; set; }
+        public DbSet<Medicine> Medicines { get; set; }
+
+
+
     }
 }

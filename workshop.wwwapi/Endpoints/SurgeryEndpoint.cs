@@ -254,9 +254,24 @@ namespace workshop.wwwapi.Endpoints
         }
 
 
+        //public static async Task<IActionResult> GetAllMedicine(IRepository repository)
+        //{
+        //    var medicine = await repository.GetAllMedicine();
+
+        //    MedicineDTORepsonse response = new MedicineDTORepsonse();
+        //    foreach (var medicine in medicines)
+        //    {
+        //        MedicineDTO m = new MedicineDTO();
+        //        m.Name = medicine.Name;
 
 
+        //    }
+        //    return TypedResults.Ok(await repository.GetAllMedicine());
         //}
+
+
+
+
 
 
 

@@ -95,5 +95,47 @@ namespace workshop.wwwapi.Repository
         }
 
 
+
+
+
+
+
+
+        public async Task<IEnumerable<Medicine>> GetAllMedicine()
+        {
+            return await _databaseContext.Medicines.ToListAsync();
+        } 
+
+        public async Task<Medicine> GetMedicineById()
+        {
+            return await _databaseContext.Medicines.FirstAsync();
+        }
+
+        public async Task<Medicine> AddMedicine (Medicine medicine)
+        {
+            _databaseContext.Medicines.Add(medicine);
+            await _databaseContext.SaveChangesAsync();
+            return medicine;
+
+        }
+
+        public async Task<Medicine> UpdateMedicine(Medicine medicine)
+        {
+            _databaseContext.Medicines.Update(medicine);
+            await _databaseContext.SaveChangesAsync();
+            return medicine;
+        }
+
+        public async Task<Medicine> DeleteMedicine(int id )
+        {
+            var medicine = await _databaseContext.Medicines.FindAsync( id );
+            if (medicine != null) 
+            {
+                _databaseContext.Remove(medicine);
+                await _databaseContext.SaveChangesAsync();  
+                 
+            } return medicine;
+           
+        }
     }
 }
